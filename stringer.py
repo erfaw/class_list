@@ -15,4 +15,6 @@ class Stringer(str):
 
     def split_with_comma(self, string):
         """catch a string, split it with ',' and return it"""
-        return string.split(',')
+        r_list = string.split(',')
+        e_list = [x.strip() for x in r_list]
+        return e_list
