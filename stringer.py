@@ -3,6 +3,7 @@ class Stringer(str):
         super().__init__()
         self.raw_data = None
         self.formated_str = None
+        self.csv_output = None
 
     def load_raw_data(self, address):
         """opens txt file of date details in not formated string from base file, address is file path"""
@@ -18,3 +19,10 @@ class Stringer(str):
         r_list = string.split(',')
         e_list = [x.strip() for x in r_list]
         return e_list
+    
+    def en_formated_text_output(self):
+        """make a text output file name: en_formated_text_of_classes_and_exam.txt"""
+        with open('./en_formated_text_of_classes_and_exam.txt', mode='w') as file:
+            for index in self.split_with_comma(self.formated_str):
+                file.write(index)
+                file.write('\n')
