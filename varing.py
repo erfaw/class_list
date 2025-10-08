@@ -1,12 +1,18 @@
 import csv
 from stringer import Stringer
+import subprocess as sp; sp.call('cls', shell=True)
 
 stringer = Stringer()
 
 stringer.raw_data = stringer.load_raw_data('./one of classes.txt')
-print(stringer.raw_data)
+stringer.formated_str = stringer.format_converter(stringer.raw_data)
+print(stringer.formated_str)
 
 
+
+
+# comment before git
+#=========================================
 # with open("./one of classes.txt", mode='r') as file:
 #     data2 = file.read()
 #     data_splited = data2.split(r"درس(ت):",) # reasul like this ==> ['', ' ۱۴۰۴/۰۷/۲۱ ۱۱:۰۰-۱۴:۰۰، ', ' ۱۴۰۴/۰۷/۲۸ ۱۱:۰۰-۱۴:۰۰، ', ' ۱۴۰۴/۰۸/۰۵ ۱۱:۰۰-۱۴:۰۰، ', ' ۱۴۰۴/۰۸/۱۲ ۱۱:۰۰-۱۴:۰۰، ', ' ۱۴۰۴/۰۸/۱۹ ۱۱:۰۰-۱۴:۰۰، ', ' ۱۴۰۴/۰۸/۲۶ ۱۱:۰۰-۱۴:۰۰، ', ' ۱۴۰۴/۰۹/۱۰ ۱۱:۰۰-۱۴:۰۰، امتحان(۱۴۰۴/۱۰/۲۱) ساعت : ۱۳:۳۰-۱۵:۳۰']
