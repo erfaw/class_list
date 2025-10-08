@@ -1,3 +1,4 @@
+import pandas as pd
 class Stringer(str):
     def __init__(self):
         super().__init__()
@@ -5,6 +6,7 @@ class Stringer(str):
         self.formated_str = None
         self.csv_output = None
         self.en_formated_list = []
+        self.dataframe = None
 
     def load_raw_data(self, address):
         """opens txt file of date details in not formated string from base file, address is file path"""
@@ -28,4 +30,18 @@ class Stringer(str):
                 file.write(index)
                 self.en_formated_list.append(index)
                 file.write('\n')
- 
+
+    def make_DataFrame(self):
+        """make a pandas DataFrame for classes and exam based on what we saved on 'self.en_formated_list' """
+        our_list = []
+        for line in self.en_formated_list:
+            if line != self.en_formated_list[-1]:
+                nothing = line.split()
+            else:
+                nothing = line.split()
+                nothing.remove('time')
+                nothing[1] = nothing[0].replace("EXAM(",'').replace(')','')
+                nothing[0] = 'EXAM:'
+            our_list.append(nothing)
+
+        return pd.DataFrame(our_list, index=[i for i in range(1, len(our_list)+1)], columns=['', 'DATE', 'TIME'])
