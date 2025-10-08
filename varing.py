@@ -6,11 +6,8 @@ stringer = Stringer()
 
 stringer.raw_data = stringer.load_raw_data('./one of classes.txt')
 stringer.formated_str = stringer.format_converter(stringer.raw_data)
-# print(stringer.formated_str)
-# print(stringer.split_with_comma(stringer.formated_str))
 
-for index in stringer.split_with_comma(stringer.formated_str):
-    print(index)
+stringer.en_formated_text_output()
 
 
 
