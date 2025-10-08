@@ -10,22 +10,10 @@ stringer.formated_str = stringer.format_converter(stringer.raw_data)
 
 stringer.en_formated_text_output()
 
-our_list = []
-for line in stringer.en_formated_list:
-    if line != stringer.en_formated_list[-1]:
-        nothing = line.split()
-    else:
-        nothing = line.split()
-        nothing.remove('time')
-        nothing[1] = nothing[0].replace("EXAM(",'').replace(')','')
-        nothing[0] = 'EXAM:'
+stringer.dataframe = stringer.make_DataFrame()
+print(stringer.dataframe)
 
-    our_list.append(nothing)
-
-
-
-my_df = pd.DataFrame(our_list, index=[i for i in range(1, len(our_list)+1)], columns=['', 'DATE', 'TIME'])
-print(my_df)
+stringer.dataframe.to_csv('end_result.csv')
 
 
 #TODO: make a csv formate file with columns : ['date', 'duration']
