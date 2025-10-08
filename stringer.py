@@ -28,3 +28,4 @@ class Stringer(str):
                 file.write(index)
                 self.en_formated_list.append(index)
                 file.write('\n')
+ 
