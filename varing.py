@@ -17,5 +17,8 @@ stringer.dataframe.to_csv('end_result.csv')
 stringer.dataframe.to_excel('end_result.xlsx')
 
 
-#TODO: make a csv formate file with columns : ['date', 'duration']
-#TODO:
+#DONE: make a csv formate file with columns : ['date', 'duration']
+#TODO: in program vaghti arzesh peyda mikne ke beshe bahash to Google Calendar event set kard, felan bedarde khasi nemikhore,
+#TODO: fix kardane vaghti ke data filed 'makan' dare 
+#TODO: add kardane mechanism khondan va sakhtan az roye chand file
+#TODO: ezafe kardane TITLE ba jahayi az file haye output ke lazeme
