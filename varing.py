@@ -14,6 +14,7 @@ stringer.dataframe = stringer.make_DataFrame()
 print(stringer.dataframe)
 
 stringer.dataframe.to_csv('end_result.csv')
+stringer.dataframe.to_excel('end_result.xlsx')
 
 
 #TODO: make a csv formate file with columns : ['date', 'duration']
