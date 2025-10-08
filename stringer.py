@@ -4,6 +4,7 @@ class Stringer(str):
         self.raw_data = None
         self.formated_str = None
         self.csv_output = None
+        self.en_formated_list = []
 
     def load_raw_data(self, address):
         """opens txt file of date details in not formated string from base file, address is file path"""
@@ -25,4 +26,5 @@ class Stringer(str):
         with open('./en_formated_text_of_classes_and_exam.txt', mode='w') as file:
             for index in self.split_with_comma(self.formated_str):
                 file.write(index)
+                self.en_formated_list.append(index)
                 file.write('\n')
